@@ -8,47 +8,47 @@ import axios from 'axios'
 import PaymentPage from './PaymentPage';
 
 const Confirm = () => {
-    const router = useRouter()
-    // 🆒 Hyimen
-    const { pickup, dropoff } = router.query
+//     const router = useRouter()
+//     // 🆒 Hyimen
+//     const { pickup, dropoff } = router.query
 
     const [pickupCoordinates, setPickupCoordinates] = useState()
     const [dropoffCoordinates, setDropoffCoordinates] = useState()
 
-    const getPickupCoordinates = (pickup) => {
-        // 🔥 Emeric
-        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
-            new URLSearchParams({
-                access_token: "pk.eyJ1IjoiYXJnaGFkaXAiLCJhIjoiY2xobHdoZmc3MTV1aTNqbnhmbDgydjU4eSJ9.dQeMUNENDkyWKH-Jwody_A",
-                limit: 1
-            })
-        )
-            .then(response => response.json())
-            .then(data => {
-                // 🚀 L M
-                setPickupCoordinates(data.features[0].center);
-            })
-    }
+//     const getPickupCoordinates = (pickup) => {
+//         // 🔥 Emeric
+//         fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
+//             new URLSearchParams({
+//                 access_token: "pk.eyJ1IjoiYXJnaGFkaXAiLCJhIjoiY2xobHdoZmc3MTV1aTNqbnhmbDgydjU4eSJ9.dQeMUNENDkyWKH-Jwody_A",
+//                 limit: 1
+//             })
+//         )
+//             .then(response => response.json())
+//             .then(data => {
+//                 // 🚀 L M
+//                 setPickupCoordinates(data.features[0].center);
+//             })
+//     }
 
-    const getDropoffCoordinates = (dropoff) => {
-        // 🔥 Emeric
-        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
-            new URLSearchParams({
-                access_token: "pk.eyJ1IjoiYXJnaGFkaXAiLCJhIjoiY2xobHdoZmc3MTV1aTNqbnhmbDgydjU4eSJ9.dQeMUNENDkyWKH-Jwody_A",
-                limit: 1
-            })
-        )
-            .then(response => response.json())
-            .then(data => {
-                // 🚀 L M
-                setDropoffCoordinates(data.features[0].center)
-            })
-    }
+//     const getDropoffCoordinates = (dropoff) => {
+//         // 🔥 Emeric
+//         fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
+//             new URLSearchParams({
+//                 access_token: "pk.eyJ1IjoiYXJnaGFkaXAiLCJhIjoiY2xobHdoZmc3MTV1aTNqbnhmbDgydjU4eSJ9.dQeMUNENDkyWKH-Jwody_A",
+//                 limit: 1
+//             })
+//         )
+//             .then(response => response.json())
+//             .then(data => {
+//                 // 🚀 L M
+//                 setDropoffCoordinates(data.features[0].center)
+//             })
+//     }
 
-    useEffect(() => {
-        getPickupCoordinates(pickup);
-        getDropoffCoordinates(dropoff);
-    }, [pickup, dropoff])
+//     useEffect(() => {
+//         getPickupCoordinates(pickup);
+//         getDropoffCoordinates(dropoff);
+//     }, [pickup, dropoff])
 
 
     return (
